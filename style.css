@@ -1788,6 +1788,7 @@ img {
   font-size: 0.75rem;
   opacity: 0.85;
 }
+
 /* Optional: makes pre-animated state fully invisible */
 [data-aos] {
   opacity: 0;
