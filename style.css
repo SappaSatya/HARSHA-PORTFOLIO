@@ -1789,16 +1789,3 @@ img {
   opacity: 0.85;
 }
 
-/* Optional: makes pre-animated state fully invisible */
-[data-aos] {
-  opacity: 0;
-  transform: translateY(10px);
-  transition-property: opacity, transform;
-}
-
-/* AOS will add this class when the element is in view */
-[data-aos].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
