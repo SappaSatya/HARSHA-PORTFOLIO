@@ -29,12 +29,24 @@
 
   <!-- Future JS for extra interactions (we'll add this later) -->
   <script src="script.js" defer></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,       // how long the animation runs
+    easing: 'ease-out',  // smooth easing
+    once: true,          // animate only the first time you scroll to it
+    offset: 100          // start the animation a bit before it hits the center
+  });
+</script>
+
+  
 </head>
 
 <body>
 
 <!-- HEADER / NAVBAR -->
-<header class="header">
+<header class="header" >
   <div class="container nav-container">
     <div class="logo">SATYA HARSHA SAPPA</div>
 
@@ -76,7 +88,7 @@
 
 
    <!-- HERO / ABOUT SECTION -->
-<section id="home" class="hero-section">
+<section id="home" class="hero-section" data-aos="zoom-in">
   <div class="hero-inner">
 
     <!-- Small pill at top -->
@@ -129,7 +141,7 @@
 
 
 <!-- ABOUT ME SECTION -->
-<section id="about" class="about-section">
+<section id="about" class="about-section" data-aos="fade-up">
   <div class="container">
 
     <!-- Top heading -->
@@ -196,7 +208,7 @@
 
 
 <!-- EXPERIENCE SECTION -->
-<section id="experience" class="experience-section">
+<section id="experience" class="experience-section" data-aos="fade-up">
   <div class="container">
 
     <!-- Heading -->
@@ -309,7 +321,7 @@
 </section>
 
 <!-- SKILLS & TECHNOLOGIES SECTION -->
-<section id="skills" class="skills-section">
+<section id="skills" class="skills-section" data-aos="fade-up">
   <div class="container">
 
     <!-- Header -->
@@ -519,7 +531,7 @@
 </section>
 
 <!-- PROJECTS SECTION -->
-<section id="projects" class="projects-section">
+<section id="projects" class="projects-section" data-aos="fade-up">
   <div class="container">
 
     <!-- Header -->
@@ -664,7 +676,7 @@
 </section>
 
 <!-- PROFESSIONAL CERTIFICATIONS -->
-<section id="certifications" class="cert-section">
+<section id="certifications" class="cert-section" data-aos="fade-up">
   <div class="container">
 
     <div class="section-header">
@@ -770,7 +782,7 @@
 
 
 <!-- RESEARCH PUBLICATION (SIMPLE) -->
-<section id="publications" class="publication-section">
+<section id="publications" class="publication-section" data-aos="fade-up">
   <div class="container">
 
     <div class="section-header">
@@ -819,7 +831,7 @@
 
 
 
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section" data-aos="zoom-in">
     <div class="contact-header">
         <h2 class="section-title">
             Get in <span class="gradient-text">Touch</span>
