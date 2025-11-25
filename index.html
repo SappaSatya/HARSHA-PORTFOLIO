@@ -867,19 +867,47 @@
         <!-- RIGHT FORM -->
         <div class="contact-form-card">
             <h3>Send Me a Message</h3>
+            <form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  class="contact-form"
+>
+  <!-- Web3Forms access key -->
+  <input type="hidden" name="access_key" value="07c5122f-7815-44ae-93ca-a4f9513081db">
 
-            <form>
-                <div class="form-row">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                </div>
+  <!-- Optional: so you know where it came from -->
+  <input type="hidden" name="subject" value="New message from Harsha Portfolio">
+  <input type="hidden" name="from_name" value="Portfolio Contact Form">
 
-                <textarea placeholder="Your Message" required></textarea>
+  <div class="form-row">
+    <input
+      type="text"
+      name="name"
+      placeholder="Your Name"
+      required
+    />
+    <input
+      type="email"
+      name="email"
+      placeholder="Your Email"
+      required
+    />
+  </div>
 
-                <button type="submit" class="send-btn">
-                    <i class="fa-solid fa-paper-plane"></i> Send Message
-                </button>
-            </form>
+  <textarea
+    name="message"
+    placeholder="Your Message"
+    rows="5"
+    required
+  ></textarea>
+
+  <button type="submit" class="send-btn">
+    <i class="fa-solid fa-paper-plane"></i>
+    Send Message
+  </button>
+</form>
+
+           
         </div>
 
     </div>
