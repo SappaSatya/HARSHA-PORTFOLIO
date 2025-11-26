@@ -29,6 +29,18 @@
 
   <!-- Future JS for extra interactions (we'll add this later) -->
   <script src="script.js" defer></script>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 900,
+    easing: 'ease-out',
+    once: true,   // animate only the first time
+    offset: 120   // start a bit before center
+  });
+</script>
+
+
 </head>
 
 <body>
@@ -129,7 +141,9 @@
 
 
 <!-- ABOUT ME SECTION -->
-<section id="about" class="about-section">
+<section id="about" class="about-section"  data-aos="zoom-in"
+  data-aos-duration="900"
+  data-aos-easing="ease-out-back">
   <div class="container">
 
     <!-- Top heading -->
