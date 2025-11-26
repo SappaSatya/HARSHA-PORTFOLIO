@@ -1,12 +1,3 @@
-
-
-/* Fallback: if AOS breaks, don't hide anything */
-[data-aos] {
-  opacity: 1;
-  transform: none;
-}
-
-
 :root {
   --accent-gradient: linear-gradient(
     90deg,
