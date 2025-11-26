@@ -1,6 +1,14 @@
 /* Optional: make zoom effects feel like they come from the center */
 #about[data-aos="zoom-in"] {
   transform-origin: center center;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+/* Fallback: if AOS breaks, don't hide anything */
+[data-aos] {
+  opacity: 1;
+  transform: none;
 }
 
 
