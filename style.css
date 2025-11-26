@@ -1,3 +1,9 @@
+/* Optional: make zoom effects feel like they come from the center */
+#about[data-aos="zoom-in"] {
+  transform-origin: center center;
+}
+
+
 :root {
   --accent-gradient: linear-gradient(
     90deg,
