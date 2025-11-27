@@ -929,36 +929,28 @@
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(".reveal");
 
-    let lastScrollY = 0;
-    let scrollSpeed = 0;
-
-    // measure scroll speed
-    window.addEventListener("scroll", () => {
-      const currentScrollY = window.scrollY;
-      scrollSpeed = Math.abs(currentScrollY - lastScrollY);
-      lastScrollY = currentScrollY;
-    });
-
-    const revealObserver = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // faster scroll → shorter animation duration
-            const speedFactor = Math.min(scrollSpeed / 200, 1);
-            entry.target.style.transitionDuration =
-              `${0.35 + (0.10 * (1 - speedFactor))}s`;
-
             entry.target.classList.add("is-visible");
-            revealObserver.unobserve(entry.target);
+            observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.20,
+        threshold: 0.18  // becomes visible as soon as it slightly enters
       }
     );
 
-    sections.forEach((sec) => revealObserver.observe(sec));
+    sections.forEach((sec) => observer.observe(sec));
+
+    // Ensure HERO pops even if it's already fully in view on load
+    const hero = document.querySelector("#home.reveal");
+    if (hero) {
+      // tiny timeout so you see the pop instead of it being already visible
+      setTimeout(() => hero.classList.add("is-visible"), 80);
+    }
   });
 </script>
 
