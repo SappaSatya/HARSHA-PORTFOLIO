@@ -1788,15 +1788,3 @@ img {
   font-size: 0.75rem;
   opacity: 0.85;
 }
-/* ===== Keyframe animations ===== */
-@keyframes gradient-move {  
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
