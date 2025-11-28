@@ -181,6 +181,7 @@ img {
 }
 
 /* Pill navbar (right) */
+
 .nav-shell {
   padding: 4px;
   border-radius: 999px;
@@ -195,12 +196,14 @@ img {
     0 0 0 1px rgba(15, 23, 42, 0.9) inset;
 }
 
+/* IMPORTANT: remove bullets + layout horizontally */
 .nav-pill {
+  list-style: none !important;
+  margin: 0;
+  padding: 0 6px;
   display: flex;
   align-items: center;
   gap: 4px;
-  padding: 0 6px;
-  list-style: none;
 }
 
 .nav-link {
