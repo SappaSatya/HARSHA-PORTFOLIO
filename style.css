@@ -260,44 +260,6 @@ img {
   }
 }
 
-/* Base reveal (for all sections) – keep what you already had or something like this */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px) scale(0.96);
-  transition:
-    opacity 0.5s ease-out,
-    transform 0.5s ease-out;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
-
-/* Stronger, punchier effect just for the hero */
-.reveal-hero {
-  transform: scale(0.9);
-}
-
-.reveal-hero.visible {
-  animation: hero-pop 0.45s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-}
-
-@keyframes hero-pop {
-  0% {
-    opacity: 0;
-    transform: scale(0.9) translateY(20px);
-  }
-  60% {
-    opacity: 1;
-    transform: scale(1.03) translateY(0);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
 
 /* ===== About / Hero Section ===== */
 .about-section {
