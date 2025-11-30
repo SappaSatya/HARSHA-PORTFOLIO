@@ -60,3 +60,25 @@ const footerYearEl = document.getElementById("footer-year");
 if (footerYearEl) {
   footerYearEl.textContent = new Date().getFullYear();
 }
+
+/* Smooth reveal for left/right elements */
+document.addEventListener("DOMContentLoaded", () => {
+  const animatedElements = document.querySelectorAll(".reveal-left, .reveal-right");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px",
+    }
+  );
+
+  animatedElements.forEach((el) => observer.observe(el));
+});
