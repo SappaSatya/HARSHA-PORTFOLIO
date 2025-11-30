@@ -941,9 +941,8 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const revealElements = document.querySelectorAll(".reveal");
+    const allReveal = document.querySelectorAll(".reveal");
 
-    // instant pop for HERO section
     const hero = document.querySelector(".hero-section.reveal");
     if (hero) {
       requestAnimationFrame(() => {
@@ -951,7 +950,6 @@
       });
     }
 
-    // scroll observer for all other sections
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -961,10 +959,13 @@
           }
         });
       },
-      { threshold: 0.2 }
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -5% 0px"
+      }
     );
 
-    revealElements.forEach((section) => {
+    allReveal.forEach((section) => {
       if (section !== hero) observer.observe(section);
     });
   });
