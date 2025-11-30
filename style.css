@@ -1044,15 +1044,49 @@ img {
   box-shadow: 0 0 18px rgba(236, 72, 153, 0.9);
 }
 
-/* Glass card */
+/* ========== GLASS + GRADIENT BORDER ========== */
 .experience-card {
-  background: radial-gradient(circle at top left, rgba(15, 23, 42, 0.95), #020617);
+  position: relative;
+  z-index: 0;
   border-radius: 22px;
   padding: 1.3rem 1.4rem 1.2rem;
-  border: 1px solid rgba(148, 163, 184, 0.22);
+  color: #e5e7eb;
+  overflow: hidden;
+}
+
+/* animated gradient border (same colours as titles) */
+.experience-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    120deg,
+    #6366f1,
+    #a855f7,
+    #ec4899,
+    #22c55e,
+    #6366f1
+  );
+  background-size: 250% 250%;
+  animation: gradient-move 10s ease-in-out infinite;
+  z-index: -2;
+}
+
+/* inner dark glass layer */
+.experience-card::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(15, 23, 42, 0.97),
+    #020617
+  );
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(14px);
-  color: #e5e7eb;
+  z-index: -1;
 }
 
 /* Top row: role + company vs date + logo */
@@ -1123,7 +1157,7 @@ img {
   color: #d1d5db;
 }
 
-/* Optional link */
+/* Link */
 .experience-link {
   display: inline-flex;
   align-items: center;
@@ -1164,6 +1198,7 @@ img {
     left: 7px;
   }
 }
+
 /* ===== Skills Section ===== */
 .skills-section {
   padding: 4.5rem 1rem 6rem;  /* more bottom space so glow fits */
