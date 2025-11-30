@@ -792,6 +792,32 @@ img {
   }
 }
 
+/* ===== REVEAL ANIMATIONS ===== */
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* left side slides from left */
+.reveal-left {
+  transform: translateX(-60px) translateY(20px) scale(0.95);
+}
+
+/* right side slides from right */
+.reveal-right {
+  transform: translateX(60px) translateY(20px) scale(0.95);
+}
+
+/* When visible */
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0) scale(1);
+}
+
+
 /* ===== Section headings (reusable) ===== */
 .section-header {
   text-align: center;
