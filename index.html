@@ -939,4 +939,36 @@
   </div>
 </footer>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const revealElements = document.querySelectorAll(".reveal");
+
+    // instant pop for HERO section
+    const hero = document.querySelector(".hero-section.reveal");
+    if (hero) {
+      requestAnimationFrame(() => {
+        hero.classList.add("visible");
+      });
+    }
+
+    // scroll observer for all other sections
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    revealElements.forEach((section) => {
+      if (section !== hero) observer.observe(section);
+    });
+  });
+</script>
+
+
 </body>
